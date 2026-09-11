@@ -6,6 +6,13 @@ import QrCode from '@/components/QrCode.vue'
 // Canonical URL, not window.location - so the QR is correct even if this
 // page is ever loaded from localhost/preview.
 const PAGE_URL = 'https://radicalreadings.github.io/fanon/'
+
+const wretchedCovers = [
+  'covers/wote/1056377_FanonF_Wretched.webp',
+  'covers/wote/16995WretchedoftheEarth60thAnn.jpg',
+  'covers/wote/A1Zskmdej7L._AC_UF1000,1000_QL80_.jpg',
+  'covers/wote/4819967_Wretched-of-the-Earth-9780802150837_COV.webp',
+]
 </script>
 
 <template>
@@ -26,7 +33,7 @@ const PAGE_URL = 'https://radicalreadings.github.io/fanon/'
   <v-container class="page-section page-section-rule">
     <v-row>
       <v-col cols="12" sm="5" md="4">
-        <CoverImage />
+        <CoverImage :sources="wretchedCovers" alt="The Wretched of the Earth - cover editions" />
       </v-col>
       <v-col cols="12" sm="7" md="8">
         <h2 class="section-heading">Wretched of the Earth</h2>

@@ -1,0 +1,17 @@
+@import '@fontsource/bodoni-moda/700.css';
+@import '@fontsource/bodoni-moda/900.css';
+@import '@fontsource/source-serif-4/400.css';
+@import '@fontsource/source-serif-4/600.css';
+
+:root {
+  --font-display: 'Bodoni Moda', Didot, Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+}
+
+/* Safety-net background so there's no flash of white around the edges
+   before Vuetify paints .v-application - keep in sync with the `background`
+   theme color in src/plugins/vuetify.ts. */
+body {
+  margin: 0;
+  background-color: #f1ecdf;
+}

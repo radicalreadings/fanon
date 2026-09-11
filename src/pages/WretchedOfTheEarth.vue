@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import SessionHero from '@/components/session/SessionHero.vue'
-import VideoTeaser from '@/components/session/VideoTeaser.vue'
 import CoverImage from '@/components/session/CoverImage.vue'
 import QrCode from '@/components/QrCode.vue'
 
@@ -13,7 +12,15 @@ const PAGE_URL = 'https://radicalreadings.github.io/fanon/'
   <SessionHero title="The Wretched of the Earth" author="Frantz Fanon" />
 
   <v-container class="page-section">
-    <VideoTeaser caption="Start with this video interview" />
+    <p class="section-caption">Start with this video interview</p>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/pm9xDMGIy_c"
+        title="Video interview"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      />
+    </div>
   </v-container>
 
   <v-container class="page-section page-section-rule">
@@ -56,6 +63,25 @@ const PAGE_URL = 'https://radicalreadings.github.io/fanon/'
 }
 .page-section-rule {
   border-top: 1px solid rgba(var(--v-theme-on-background), 0.15);
+}
+.section-caption {
+  margin: 0 0 1rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: rgb(var(--v-theme-on-background));
+}
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 2px solid rgb(var(--v-theme-primary));
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .section-heading {
   margin: 0 0 1rem;

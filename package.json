@@ -16,6 +16,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fontsource/bbh-bartle": "^5.3.0",
     "@fontsource/bodoni-moda": "^5.3.0",
     "@fontsource/source-serif-4": "^5.3.0",
     "@mdi/font": "^7.4.47",

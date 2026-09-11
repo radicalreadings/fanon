@@ -1,10 +1,10 @@
 <template>
   <v-footer class="app-footer d-flex justify-center py-4">
     <span class="footer-text">
-      Radical Readings ·
-      <a href="https://github.com/radicalreadings/fanon" target="_blank" rel="noopener noreferrer">
+      Radical Readings · 2026
+      <!-- <a href="https://github.com/radicalreadings/fanon" target="_blank" rel="noopener noreferrer">
         Source on GitHub
-      </a>
+      </a> -->
     </span>
   </v-footer>
 </template>

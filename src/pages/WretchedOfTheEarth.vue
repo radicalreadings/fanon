@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import SessionHero from '@/components/session/SessionHero.vue'
 import CoverImage from '@/components/session/CoverImage.vue'
 import QrCode from '@/components/QrCode.vue'
 
@@ -16,7 +15,13 @@ const wretchedCovers = [
 </script>
 
 <template>
-  <SessionHero title="The Wretched of the Earth" author="Frantz Fanon" />
+  <v-container class="hero">
+    <h1 class="hero-title">The Wretched of the Earth</h1>
+    <p class="hero-subtitle">
+      <span>Reading Discussion</span>
+      <span>10.13.26</span>
+    </p>
+  </v-container>
 
   <v-container class="page-section">
     <p class="section-caption">Start with this video interview</p>
@@ -35,16 +40,18 @@ const wretchedCovers = [
       <v-col cols="12" sm="5" md="4">
         <CoverImage :sources="wretchedCovers" alt="The Wretched of the Earth - cover editions" />
       </v-col>
-      <v-col cols="12" sm="7" md="8">
-        <h2 class="section-heading">Wretched of the Earth</h2>
-        <p>(selected chapters)</p>
-        <!-- Placeholder structure - swap in real page numbers/notes once picked -->
+      <v-col cols="12" sm="7" md="8" class="chapters-col">
+        <div class="section-heading">
+          <h2>The Wretched of the Earth</h2>
+          <p class="section-caption">by Frantz Fanon</p>
+        </div>
+        <h3 class="chapters-heading">Selected Chapters</h3>
         <ul class="point-list">
-          <li><span class="point-number">1</span><span class="point-line" /></li>
-          <li><span class="point-number">3</span><span class="point-line" /></li>
-          <li><span class="point-number">5</span><span class="point-line" /></li>
+          <li>Chapter I - On Violence</li>
+          <li>Chapter III - The Trials and Tribulations of National Consciousness</li>
+          <li>Chapter V - Colonial War and Mental Disorders</li>
         </ul>
-        <p class="note-line"><span class="note-label">Note:</span><span class="point-line" /></p>
+        <p class="note-line"><span class="note-label">Note:</span>Feel free to read the whole book!<br>Our discussion will cover these selected chapters and the interview.</p>
       </v-col>
     </v-row>
   </v-container>
@@ -64,6 +71,30 @@ const wretchedCovers = [
 </template>
 
 <style scoped>
+.hero {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+.hero-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgb(var(--v-theme-primary));
+  font-size: clamp(2.25rem, 7vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+}
+.hero-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0.75rem 0 0;
+  font-family: var(--font-label);
+  font-size: clamp(1.15rem, 4vw, 1.75rem);
+  color: rgba(var(--v-theme-on-background), 0.65);
+}
 .page-section {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -98,22 +129,30 @@ const wretchedCovers = [
   color: rgb(var(--v-theme-primary));
   font-size: 1.4rem;
 }
+.chapters-col {
+  display: flex;
+  flex-direction: column;
+}
+.chapters-heading {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  /* color: rgb(var(--v-theme-primary)); */
+  font-size: 1.5rem;
+}
 .point-list {
-  list-style: none;
   margin: 0 0 1rem;
-  padding: 0;
+  padding-left: 1.25rem;
   font-family: var(--font-body);
   font-size: 1.05rem;
 }
 .point-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(var(--v-theme-on-background), 0.15);
+  padding: 0.3rem 0;
+  font-weight: 700;
+  color: rgb(var(--v-theme-primary));
 }
-.point-number {
-  font-weight: 600;
+.point-list li::marker {
   color: rgb(var(--v-theme-primary));
 }
 .point-line {
@@ -121,7 +160,16 @@ const wretchedCovers = [
   height: 1px;
   background-color: rgba(var(--v-theme-on-background), 0.3);
 }
-.note-line,
+.note-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: auto;
+  margin-bottom: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgb(var(--v-theme-on-background));
+}
 .location-line {
   display: flex;
   align-items: center;

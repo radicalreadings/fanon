@@ -2,10 +2,13 @@
 @import '@fontsource/bodoni-moda/900.css';
 @import '@fontsource/source-serif-4/400.css';
 @import '@fontsource/source-serif-4/600.css';
+@import '@fontsource/bbh-bartle/400.css';
 
 :root {
   --font-display: 'Bodoni Moda', Didot, Georgia, serif;
   --font-body: 'Source Serif 4', Georgia, serif;
+  /* Blocky/heavy - for stamp-like labels (e.g. the hero subtitle date line) */
+  --font-label: 'BBH Bartle', 'Arial Black', sans-serif;
 }
 
 /* Safety-net background so there's no flash of white around the edges

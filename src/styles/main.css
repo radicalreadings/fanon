@@ -19,8 +19,11 @@ body {
   background-color: #f1ecdf;
 }
 
-/* So the "a Selection of Chapters" anchor link on the Wretched of the Earth
-   page scrolls smoothly instead of jumping. */
+/* Anchor-link scrolling: smooth instead of an instant jump, and offset by
+   the fixed app-bar's height (Vuetify's default v-app-bar is 64px; no custom
+   height is set in AppHeader.vue) plus a little breathing room, so the bar
+   doesn't cover the top of whatever section was linked to. */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }

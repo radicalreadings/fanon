@@ -55,7 +55,7 @@ const wretchedCovers = [
     </v-row>
   </v-container>
 
-  <v-container id="selected-chapters" class="page-section page-section-rule">
+  <v-container class="page-section page-section-rule">
     <v-row>
       <v-col cols="12" sm="5" md="4">
         <CoverImage :sources="wretchedCovers" alt="The Wretched of the Earth - cover editions" />
@@ -65,7 +65,7 @@ const wretchedCovers = [
           <h2>The Wretched of the Earth</h2>
           <p class="section-caption">by Frantz Fanon</p>
         </div>
-        <h3 class="chapters-heading">Selected Chapters</h3>
+        <h3 id="selected-chapters" class="chapters-heading">Selected Chapters</h3>
         <ul class="point-list">
           <li>Chapter I - On Violence</li>
           <li>Chapter III - The Trials and Tribulations of National Consciousness</li>

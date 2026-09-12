@@ -18,3 +18,9 @@ body {
   margin: 0;
   background-color: #f1ecdf;
 }
+
+/* So the "a Selection of Chapters" anchor link on the Wretched of the Earth
+   page scrolls smoothly instead of jumping. */
+html {
+  scroll-behavior: smooth;
+}

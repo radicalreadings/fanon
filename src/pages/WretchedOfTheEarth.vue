@@ -24,18 +24,38 @@ const wretchedCovers = [
   </v-container>
 
   <v-container class="page-section">
-    <p class="section-caption">Start with this video interview</p>
-    <div class="video-embed">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/pm9xDMGIy_c"
-        title="Video interview"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      />
-    </div>
+    <v-row>
+      <v-col cols="12" md="4">
+        <p class="intro-text">
+          <b>Welcome to Radical Readings at Fitz.</b> Our first book discussion is on the 1961 masterpiece
+          <em>The Wretched of the Earth</em>, by Frantz Fanon.
+        </p>
+        <br>
+        <p class="intro-text">Our discussion will focus on a
+          <a href="#selected-chapters" class="intro-link">selection of chapters</a> and an
+          <a href="#interview" class="intro-link">Interview</a>
+          with Mumia Abu-Jamal about Fanon. It is highly recommended you listen to the interview
+          before reading.
+        </p>
+        <br>
+        <p class="intro-text">
+          <b>10.13.2026</b> at <b>6:00 PM</b> at <a href="#location" class="intro-link">Fitz</a>.
+        </p>
+      </v-col>
+      <v-col id="interview" cols="12" md="8">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/pm9xDMGIy_c"
+            title="Video interview"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
+      </v-col>
+    </v-row>
   </v-container>
 
-  <v-container class="page-section page-section-rule">
+  <v-container id="selected-chapters" class="page-section page-section-rule">
     <v-row>
       <v-col cols="12" sm="5" md="4">
         <CoverImage :sources="wretchedCovers" alt="The Wretched of the Earth - cover editions" />
@@ -51,7 +71,7 @@ const wretchedCovers = [
           <li>Chapter III - The Trials and Tribulations of National Consciousness</li>
           <li>Chapter V - Colonial War and Mental Disorders</li>
         </ul>
-        <p class="note-line"><span class="note-label">Note:</span>Feel free to read the whole book!<br>Our discussion will cover these selected chapters and the interview.</p>
+        <p class="note-line"><span class="note-label">Note:</span>Feel free to read the whole book!<br>Our discussion will cover these Selected Chapters and the Interview.</p>
       </v-col>
     </v-row>
   </v-container>
@@ -59,9 +79,18 @@ const wretchedCovers = [
   <v-container class="page-section page-section-rule">
     <v-row align="end">
       <v-col cols="12" sm="7" md="8">
-        <h2 class="section-heading">Location</h2>
-        <p class="location-line"><span class="point-line" /></p>
-        <p class="location-line"><span class="point-line" /></p>
+        <h2 id="location" class="section-heading">Location</h2>
+        <p class="location-line"><b>Fitz Books and Waffles</b></p>
+        <p class="location-line">1462 Main St. Buffalo, NY</p>
+        <br>
+        <p class="location-line"><b>6PM</b> October 13, 2026</p>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=1462+Main+St,+Buffalo,+NY&output=embed"
+            title="Map showing Fitz Books and Waffles, 1462 Main St., Buffalo, NY"
+            loading="lazy"
+          />
+        </div>
       </v-col>
       <v-col cols="12" sm="5" md="4" class="d-flex justify-sm-end">
         <QrCode :value="PAGE_URL" label="QR to this page" />
@@ -98,6 +127,17 @@ const wretchedCovers = [
 .page-section {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.intro-text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: rgb(var(--v-theme-on-background));
+}
+.intro-link {
+  color: rgb(var(--v-theme-primary));
+  font-weight: 600;
 }
 .page-section-rule {
   border-top: 1px solid rgba(var(--v-theme-on-background), 0.15);
@@ -145,7 +185,7 @@ const wretchedCovers = [
   margin: 0 0 1rem;
   padding-left: 1.25rem;
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 .point-list li {
   padding: 0.3rem 0;
@@ -154,11 +194,6 @@ const wretchedCovers = [
 }
 .point-list li::marker {
   color: rgb(var(--v-theme-primary));
-}
-.point-line {
-  flex: 1;
-  height: 1px;
-  background-color: rgba(var(--v-theme-on-background), 0.3);
 }
 .note-line {
   display: flex;
@@ -171,12 +206,24 @@ const wretchedCovers = [
   color: rgb(var(--v-theme-on-background));
 }
 .location-line {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
   font-family: var(--font-body);
   font-size: 1.05rem;
+  color: rgb(var(--v-theme-on-background));
+}
+.map-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 6 / 3;
+  margin-top: 0.75rem;
+  border: 2px solid rgb(var(--v-theme-primary));
+}
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .note-label {
   font-weight: 600;

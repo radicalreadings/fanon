@@ -19,7 +19,6 @@
     "@fontsource/bbh-bartle": "^5.3.0",
     "@fontsource/bodoni-moda": "^5.3.0",
     "@fontsource/source-serif-4": "^5.3.0",
-    "@mdi/font": "^7.4.47",
     "qrcode": "^1.5.4",
     "vue": "^3.5.42",
     "vuetify": "^3.13.4"

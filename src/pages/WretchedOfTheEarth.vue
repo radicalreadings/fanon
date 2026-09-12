@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CoverImage from '@/components/session/CoverImage.vue'
+import CoverImage from '@/components/CoverImage.vue'
 import QrCode from '@/components/QrCode.vue'
 
 // Canonical URL, not window.location - so the QR is correct even if this
@@ -30,14 +30,12 @@ const wretchedCovers = [
           <b>Welcome to Radical Readings at Fitz.</b> Our first book discussion is on the 1961 masterpiece
           <em>The Wretched of the Earth</em>, by Frantz Fanon.
         </p>
-        <br>
         <p class="intro-text">Our discussion will focus on a
           <a href="#selected-chapters" class="intro-link">selection of chapters</a> and an
           <a href="#interview" class="intro-link">Interview</a>
           with Mumia Abu-Jamal about Fanon. It is highly recommended you listen to the interview
           before reading.
         </p>
-        <br>
         <p class="intro-text">
           <b>10.13.2026</b> at <b>6:00 PM</b> at <a href="#location" class="intro-link">Fitz</a>.
         </p>
@@ -82,8 +80,7 @@ const wretchedCovers = [
         <h2 id="location" class="section-heading">Location</h2>
         <p class="location-line"><b>Fitz Books and Waffles</b></p>
         <p class="location-line">1462 Main St. Buffalo, NY</p>
-        <br>
-        <p class="location-line"><b>6PM</b> October 13, 2026</p>
+        <p class="location-line location-line-spaced"><b>6PM</b> October 13, 2026</p>
         <div class="map-embed">
           <iframe
             src="https://www.google.com/maps?q=1462+Main+St,+Buffalo,+NY&output=embed"
@@ -129,8 +126,7 @@ const wretchedCovers = [
   padding-bottom: 2rem;
 }
 .intro-text {
-  margin: 0;
-  font-family: var(--font-body);
+  margin: 0 0 1rem;
   font-size: 1.15rem;
   line-height: 1.5;
   color: rgb(var(--v-theme-on-background));
@@ -152,7 +148,7 @@ const wretchedCovers = [
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border: 2px solid rgb(var(--v-theme-primary));
+  border: var(--border-accent);
 }
 .video-embed iframe {
   position: absolute;
@@ -178,13 +174,11 @@ const wretchedCovers = [
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 900;
-  /* color: rgb(var(--v-theme-primary)); */
   font-size: 1.5rem;
 }
 .point-list {
   margin: 0 0 1rem;
   padding-left: 1.25rem;
-  font-family: var(--font-body);
   font-size: 1.15rem;
 }
 .point-list li {
@@ -201,22 +195,23 @@ const wretchedCovers = [
   gap: 0.5rem;
   margin-top: auto;
   margin-bottom: 0;
-  font-family: var(--font-body);
   font-size: 1.05rem;
   color: rgb(var(--v-theme-on-background));
 }
 .location-line {
   margin: 0 0 0.5rem;
-  font-family: var(--font-body);
   font-size: 1.05rem;
   color: rgb(var(--v-theme-on-background));
+}
+.location-line-spaced {
+  margin-top: 0.75rem;
 }
 .map-embed {
   position: relative;
   width: 100%;
   aspect-ratio: 6 / 3;
   margin-top: 0.75rem;
-  border: 2px solid rgb(var(--v-theme-primary));
+  border: var(--border-accent);
 }
 .map-embed iframe {
   position: absolute;

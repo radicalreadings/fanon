@@ -9,6 +9,12 @@
   --font-body: 'Source Serif 4', Georgia, serif;
   /* Blocky/heavy - for stamp-like labels (e.g. the hero subtitle date line) */
   --font-label: 'BBH Bartle', 'Arial Black', sans-serif;
+  /* Shared rust accent border used on every framed embed/box (QR code, cover
+     image, video, map). Elements that sit inside a --font-display ancestor
+     (e.g. .section-caption under .section-heading) still need their own
+     explicit font-family - inheritance would otherwise pick up the display
+     font instead of this default. */
+  --border-accent: 2px solid rgb(var(--v-theme-primary));
 }
 
 /* Safety-net background so there's no flash of white around the edges
@@ -17,11 +23,12 @@
 body {
   margin: 0;
   background-color: #f1ecdf;
+  font-family: var(--font-body);
 }
 
 /* Anchor-link scrolling: smooth instead of an instant jump, and offset by
    the fixed app-bar's height (Vuetify's default v-app-bar is 64px; no custom
-   height is set in AppHeader.vue) plus a little breathing room, so the bar
+   height is set on it in App.vue) plus a little breathing room, so the bar
    doesn't cover the top of whatever section was linked to. */
 html {
   scroll-behavior: smooth;

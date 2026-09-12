@@ -11,14 +11,19 @@ const props = defineProps<{
 const svg = ref('')
 
 watchEffect(async () => {
-  svg.value = await QRCode.toString(props.value, {
+  const value = props.value
+  const rendered = await QRCode.toString(value, {
     type: 'svg',
     margin: 0,
     color: {
-      dark: '#1c1917',
+      dark: '#1c1917', // keep in sync with 'on-background' in src/plugins/vuetify.ts
       light: '#00000000',
     },
   })
+  // Guard against an older, slower-resolving call overwriting a newer one
+  // if `value` ever changes rapidly (it's a static prop today, but this
+  // keeps the component correct if it's ever reused with a dynamic one).
+  if (props.value === value) svg.value = rendered
 })
 </script>
 
@@ -36,7 +41,7 @@ watchEffect(async () => {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  border: 2px solid rgb(var(--v-theme-primary));
+  border: var(--border-accent);
   padding: 1rem;
 }
 .qr-code {
@@ -50,7 +55,6 @@ watchEffect(async () => {
 }
 .qr-label {
   margin: 0;
-  font-family: var(--font-body);
   font-size: 0.85rem;
   text-align: center;
   color: rgb(var(--v-theme-on-background));
